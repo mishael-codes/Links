@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Mishael Enyi" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>My Profile Links</title>
+    <base target="_blank" />
+  </head>
+  <body>
+    <main role="main">
+      <section class="link-container">
+        <img class="hero-img" src="images/headshot.jpeg" alt="hero-img" />
+
+        <h1>Mishael Enyi</h1>
+
+        <!-- GitHub Link -->
+        <a class="link-item" href="https://github.com/mishael-codes">GitHub</a>
+
+        <!-- Twitter Link -->
+        <a class="link-item" href="https://www.twitter.com/mishael_codes"
+          >Twitter</a
+        >
+
+        <!-- Instagram Link -->
+        <a class="link-item" href="https://www.instagram.com/mishael.codes"
+          >Instagram</a
+        >
+
+        <!-- LinkedIn Link -->
+        <a
+          class="link-item"
+          href="https://www.linkedin.com/in/mishael-enyi-259384230/"
+          >LinkedIn</a
+        >
+        <!-- 
+        <a class="link-item" href="https://instagram/"></a>
+        <a class="link-item" href="https://instagram/"></a>
+        <a class="link-item" href="https://instagram/"></a> -->
+
+        <!-- Frontend Mentor -->
+        <a
+          class="link-item"
+          href="https://www.frontendmentor/profile/mishael-codes"
+          >Frontend Mentor</a
+        >
+      </section>
+    </main>
+
+    <script>
+      let linkItems = document.querySelectorAll(".link-item");
+
+      window.addEventListener("scroll", checkitems);
+
+      function checkitems() {
+        let triggerBottom = window.innerHeight / 5 * 4;
+
+        linkItems.forEach(linkItem => {
+          let linkItemTop = linkItem.getBoundingClientRect().top
+
+          if(linkItemTop < triggerBottom){
+            linkItem.classList.add("show");
+          }else{
+            linkItem.classList.remove("show")
+          }
+        })
+      }
+
+      checkitems()
+    </script>
+  </body>
+</html>
